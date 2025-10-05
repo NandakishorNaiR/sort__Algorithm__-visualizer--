@@ -1,0 +1,103 @@
+:root {
+    --bg: #1f1d2b;
+    --panel: #2b2b37;
+    --text: #ffffff;
+    --bar: #4caf50;
+    --accent: cyan;
+    --muted: #9aa0a6;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    margin-top: 18px
+}
+
+h1 {
+    font-size: 34px;
+    margin: 8px 0 18px;
+    text-align: center;
+}
+
+.controls {
+    width: 88%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.controls select,
+.controls button,
+.controls input[type="range"] {
+    height: 34px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #22222a;
+    color: var(--text);
+}
+
+.controls button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.speed-label {
+    margin-left: 6px;
+    margin-right: 6px;
+    color: var(--muted);
+}
+
+main {
+    width: 88%;
+    max-width: 1100px;
+    flex: 1;
+    margin-bottom: 32px;
+}
+
+.bars-container {
+    height: 420px;
+    background: var(--panel);
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
+    gap: 6px;
+    overflow: hidden;
+}
+
+
+/* bar style - width adjusts to container using flex */
+
+.bar {
+    flex: 1 1 18px;
+    /* allow many bars while maintaining spacing */
+    margin: 0 4px;
+    background: var(--bar);
+    border-radius: 4px;
+    transition: height 0.18s ease, background-color 0.18s ease;
+    min-width: 6px;
+}
+
+
+/* optional - make sorted highlight a CSS class if you want */
+
+.bar.sorted {
+    background: var(--accent);
+}
